@@ -6,10 +6,20 @@ import { useState } from 'react';
 
 export default function Home(){
 
+    const [ nome, setNome ] = useState('');
     const [ email, setEmail ] = useState('');
 
     function handleRegister(){
-
+        if((nome == "" || email =="")){
+            alert('Os campos Nome e Email são obrigatórios')
+        }
+        else{
+            localStorage.setItem('email', JSON.stringify(email))
+            localStorage.setItem('nome', JSON.stringify(nome))
+            alert('ATENÇÃO! Esta é uma página criada exclusivamente para portfólio. Até onde sei, a empresa "Valse!" não existe. Dúvidas, críticas, sugestões... encontre-me no GitHub (link no rodapé)')
+        }
+        
+        
     }
 
     function handleMatricula(){
@@ -40,7 +50,7 @@ export default function Home(){
                         </S1.Div2HeaderP>
                     </S1.Div2Header>
                     <S1.Div2Form>
-                        <S1.Div2FormInput placeholder="Nome"/>
+                        <S1.Div2FormInput placeholder="Nome" onChange={e => setNome(e.target.value)}/>
                         <S1.Div2FormInput placeholder="E-mail" onChange={e => setEmail(e.target.value)}/>
                     </S1.Div2Form>
                     <S1.Div2Footer>
@@ -50,7 +60,7 @@ export default function Home(){
                         <S1.Div2FooterP>
                             Nós entraremos em contato para agendar sua aula GRÁTIS.
                         </S1.Div2FooterP>
-                        <S1.Div2FooterButton>
+                        <S1.Div2FooterButton onClick={handleRegister}>
                             Quero Minha Aula GRÁTIS
                         </S1.Div2FooterButton>
                     </S1.Div2Footer>
@@ -76,7 +86,7 @@ export default function Home(){
             </S2.Section>
             <SF.Footer>
                 <SF.Warnning>ATENÇÃO! Esta é uma página criada exclusivamente para portfólio. Até onde sei, a empresa "Valse!" não existe. Dúvidas, críticas, sugestões... encontre-me no GitHub </SF.Warnning>
-                <SF.Github>GitHub</SF.Github>
+                <SF.Github href="https://github.com/jppatriciovnlc/reacting-valseLandingPage.git">GitHub Valse!</SF.Github>
             </SF.Footer>
         </>
     )     

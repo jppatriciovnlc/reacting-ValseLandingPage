@@ -22,7 +22,10 @@ export const Warnning = styled.div`
 
 `
 
-export const Github = styled.div`
+export const Github = styled.a`
    cursor: pointer;
+   text-decoration: none;
+   font-size: 1.5rem;
+   color: #fff;
 
 `
