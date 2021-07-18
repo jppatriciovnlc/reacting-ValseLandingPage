@@ -25,7 +25,7 @@ export const HeaderLogo = styled.h1`
    color: #fff;
    max-height: 6vh;
    font-size: 5vh;
-
+   
   
 `
 
@@ -37,7 +37,7 @@ export const HeaderDesc = styled.div`
    text-transform: capitalize;
    text-align: center;
 
-   @media (max-width: 768px) {
+   @media (max-width: 800px) {
        display: none;
    }  
 `
@@ -48,11 +48,15 @@ export const HeaderButton = styled.button`
    background: #dd5870;
    height: 4.5vh;
    width: 8rem;
-   font-size: 1.5vh;
+   font-size: 0.8rem;
    font-weight: 600;
    text-transform: uppercase;
    float: right;
    border: none;  
    cursor: pointer;
+
+   @media (max-width: 375px) {
+      margin-right: 1rem;
+   }  
 
 `
